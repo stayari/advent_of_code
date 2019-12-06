@@ -9,11 +9,15 @@ def pw_combinations(lower, upper):
         sorted_list.sort()
         # Check if the number order is increasing (e.g. sorted)
         if nbr_list == sorted_list:
-            for i in range(len(nbr_list)-1):
-                # if adjecent duplicates, it is one combination
-                if nbr_list[i] == nbr_list[i+1]:
-                    combinations = combinations + 1
-                    break
+            nbr_dict = dict()
+            for num in nbr_list:
+                # Combination only if there is adjecent of two
+                if num not in nbr_dict:
+                    nbr_dict[num] = 1
+                else:
+                    nbr_dict[num] += 1
+            if 2 in nbr_dict.values():
+                combinations = combinations + 1
     return combinations
 
 
