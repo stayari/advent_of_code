@@ -1,8 +1,8 @@
-
 def pw_combinations(lower, upper):
     combinations = 0
-    # Turning into list of ints
     for nbr in range(lower, upper + 1):
+        # Turning into list of ints
+
         nbr_list = convert_to_int_list(nbr)
         # Making a sorted copy which is to be compared to
         sorted_list = nbr_list.copy()
@@ -21,13 +21,15 @@ def pw_combinations(lower, upper):
     return combinations
 
 
-# Converting the int to a list of ints. e.g 1234 -> [1,2,3,4]
+
+"""
+Converting the int input, nbr,  to a list of ints. e.g 1234 -> [1,2,3,4]
+"""
 def convert_to_int_list(nbr):
     str_nbr = str(nbr)
     nbr_list = []
     for char in str_nbr:
         nbr_list.append(int(char))
     return nbr_list
-
 
 print(pw_combinations(357253, 892942))
